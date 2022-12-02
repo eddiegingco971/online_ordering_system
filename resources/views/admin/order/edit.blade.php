@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="{{asset('/plugins')}}/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="{{asset('/plugins')}}/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="{{asset('/plugins')}}/datatables-buttons/css/buttons.bootstrap4.min.css">
+@livewireStyles
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -43,7 +44,7 @@
         </div>
     @endif
     --}}
-  <section class="content">
+  {{-- <section class="content">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6 offset-md-3 mt-3">
@@ -55,7 +56,7 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                          <form action="{{url('update-order/'.$orders->users->id)}}" method="POST" enctype="multipart/form-data">
+                          <form action="{{url('update-order/'.$orders->id)}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
 
@@ -95,7 +96,9 @@
     </div>
 
     <!-- Main content -->
-  </section>
+  </section> --}}
+
+  <livewire:edit-order :trackingId="$tracking_number">
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
@@ -134,5 +137,7 @@
     });
   });
 </script>
+
+@livewireScripts
 </body>
 </html>

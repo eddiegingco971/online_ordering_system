@@ -118,8 +118,8 @@
 
                       <div class="form-group">
                         <label for="price" class="col-form-label">Price</label>
-                        <input type="price" name="price" class="form-control" id="price" placeholder="0">
-                        @error('description')
+                        <input type="number" name="price" class="form-control" id="price" placeholder="0.00">
+                        @error('price')
                             <div class="text-danger">{{$message}}</div>
                           @enderror
                       </div>

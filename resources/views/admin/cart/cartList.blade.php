@@ -94,10 +94,10 @@
                         <td>{{$cart->total_amount}}</td>
                         <td>{{$cart->status}}</td>
 
-                        <td>
+                        {{-- <td> --}}
                           {{-- <a href="{{url('edit-customer/' .$customer->id)}}" class="btn btn-info btn-sm">Edit</a> --}}
                           {{-- <a href="{{url('delete-cart/'.$cart->id)}}" class="btn btn-danger btn-sm">Delete</a> --}}
-                        </td>
+                        {{-- </td> --}}
                       </tr>
                   @endforeach
                   </tbody>

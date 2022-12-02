@@ -46,10 +46,11 @@ class HomeController extends Controller
         return view('admin.cart.cartList', compact('carts'));
     }
 
-    public function show($id){
+    public function show($tracking_number){
 
-        $orders = Order::where('tracking_number', '!=', null)->get();
-
+        // $orders= Order::where('user_id', auth()->user()->id)->first();
+        $orders = Order::where('tracking_number', $tracking_number)->get();
+        // dd($orders);
         return view('admin.order.viewOrder', compact('orders'));
     }
 

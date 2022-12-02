@@ -6,8 +6,7 @@
   <link rel="stylesheet" href="{{asset('/plugins')}}/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="{{asset('/plugins')}}/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="{{asset('/plugins')}}/datatables-buttons/css/buttons.bootstrap4.min.css">
-  {{-- <!-- Theme style -->
-  <link rel="stylesheet" href="{{asset('/dist')}}/css/adminlte.min.css"> --}}
+@livewireStyles
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -33,8 +32,8 @@
   <div class="content-wrapper">
 
     @include('layouts.components.preloader')
-
-    {{-- @if (session('status'))
+{{--
+    @if (session('status'))
     <div class="alert alert-success text-center" role="alert">
         {{ session('status') }}
     </div>
@@ -43,9 +42,9 @@
         <div class="alert alert-warning text-center" role="alert">
             {{ session('error') }}
         </div>
-    @endif --}}
-
-  <section class="content">
+    @endif
+    --}}
+  {{-- <section class="content">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6 offset-md-3 mt-3">
@@ -53,54 +52,33 @@
                 <div class="container-fluid">
                       <div class="card elevation-3">
                         <div class="card-header text-center">
-                          <h1>Edit Slider</h1>
+                          <h1>Edit Order</h1>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                          <form action="{{url('update-slider/'.$sliders->id)}}" method="POST" enctype="multipart/form-data">
+                          <form action="{{url('update-order/'.$orders->id)}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
-                            <div class="form-group">
-                              <label for="image" class="col-form-label">Slider Image</label>
-                              <input type="file" name="image" class="form-control" id="image">
-                              <img src="{{asset('dist/img/slider/'.$sliders->image)}}" width="280px" height="200px" alt="Image" style="border-radius: 10%; margin-top: 2px;">
-                            </div>
 
                             <div class="form-group">
-                                <label for="title" class="col-form-label">Slider Title</label>
-                                <input type="title" name="title" class="form-control" value="{{$sliders->title}}" id="title">
+                              <label for="payment_status" class="col-form-label">Payment Status</label>
+                              <select  type="payment_status" name="payment_status" class="form-select form-control" id="payment_status" >
+                                @foreach ($orders as $order)
+                                    <option value="{{$order->payment_status}}">{{$order->payment_status}}</option>
+                                @endforeach
+                               </select>
                             </div>
                             <div class="form-group">
-                                <label for="description" class="col-form-label">Description</label>
-                                <textarea type="description" name="description" row="5" col="5" class="form-control" id="description">{{$sliders->description}}</textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="link" class="col-form-label">Slider Link</label>
-                                <input type="link" name="link" class="form-control" value="{{$sliders->link}}" id="title">
-                            </div>
-                            <div class="form-group">
-                                <label for="button_name" id="button_name">Button Name</label>
-                                <input type="button_name" name="button_name" class="form-control" value="{{$sliders->button_name}}" id="title">
-                                @error('button_name')
-                                <div class="text-danger">{{$message}}</div>
-                                @enderror
-                            </div>
+                              <label for="status" id="status">Status</label>
+                              <select  type="status" name="status" class="form-select form-control" id="status" >
+                                @foreach ($orders as $order)
+                                    <option value="{{$order->status}}">{{$order->Status}}</option>
+                                @endforeach
 
-                            <div class="form-group">
-                                <label for="status" class="col-form-label">Status</label>
-                                <select class="form-select form-control" type="status" name="status">
-                                  <option hidden="true" selected value="{{$sliders->status}}">--Default Status--</option>
-                                      <option value="active">Active</option>
-                                      <option value="inactive">Inactive</option>
-
-                                </select>
-                                @error('status')
-                                    <div class="text-danger">{{$message}}</div>
-                                  @enderror
-                              </div>
-
-                            <div class="form-group">
-                                <a type="button" class="btn btn-secondary" href="{{url('/slider')}}">Back</a>
+                               </select>
+                          </div>
+                              <div class="form-group">
+                                <a type="button" class="btn btn-secondary" href="{{url('/order')}}">Back</a>
                                 <button type="submit" class="btn btn-info">Update</button>
                             </div>
 
@@ -118,7 +96,9 @@
     </div>
 
     <!-- Main content -->
-  </section>
+  </section> --}}
+
+  <livewire:edit-order-staff :trackingId="$tracking_number">
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
@@ -136,6 +116,7 @@
 <script src="{{asset('/plugins')}}/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="{{asset('/plugins')}}/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 <!-- AdminLTE App -->
 <script src="{{asset('/dist')}}/js/adminlte.min.js"></script>
 
@@ -156,10 +137,7 @@
     });
   });
 </script>
+
+@livewireScripts
 </body>
 </html>
-
-
-
-
-

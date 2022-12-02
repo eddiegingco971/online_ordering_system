@@ -92,7 +92,6 @@
                   </tr>
                   </thead>
                   <tbody>
-
                     @foreach ($orderItems as $order)
                     {{-- <td>{{$order->quantity}}</td> --}}
                      {{-- <td>{{$order->user_id}}</td> --}}
@@ -118,8 +117,8 @@
                         <td>{{$order->orders->status}}</td>
 
                         <td>
-                          <a href="{{url('viewOrder/'.$order->id)}}" class="btn btn-secondary btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                          <a href="{{url('edit-order/'.$order->id)}}" class="btn btn-success btn-sm"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                          <a href="{{url('viewOrder/'.$order->orders->tracking_number)}}" class="btn btn-secondary btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                          <a href="{{url('edit-order', ['trackingId'=>$order->orders->tracking_number])}}" class="btn btn-success btn-sm"><i class="fa fa-edit" aria-hidden="true"></i></a>
                           {{-- <a href="{{url('delete-order/'.$order->id)}}" class="btn btn-danger btn-sm">Delete</a> --}}
                         </td>
                         {{-- <td>

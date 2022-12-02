@@ -17,10 +17,16 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::where('payment_status', 'unpaid')->get();
-        $orderItems = OrderItems::get();
+        // $orders = Order::where('payment_status', 2)
+        // ->where('status', [1,2])
+        // ->get();
+        // dd($orders);
+        $orderItems = OrderItems::whereHas('orders', function ($q){
+            $q->where('payment_status', '!=', 1);
+        })->get();
+        // dd($orderItems);
         $categories = Category::where('created_at', '!=', null)->get();
-        return view('admin.order.index', compact('orders', 'categories', 'orderItems'));
+        return view('admin.order.index', compact('categories', 'orderItems'));
     }
 
     public function orderDelivered()
@@ -70,12 +76,14 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($tracking_number)
     {
-        $orderItems = OrderItems::find($id);
-        $orders = Order::get();
-        $users = User::get();
-        return view('admin.order.edit', compact('orderItems', 'orders', 'users'));
+        // $tracking_number
+        // $orderItems = OrderItems::find($id);
+        // $orders = Order::where('tracking_number', $tracking_number)->get();
+        // dd($orders);
+        // $users = User::get();
+        return view('admin.order.edit', compact('tracking_number'));
     }
 
     /**

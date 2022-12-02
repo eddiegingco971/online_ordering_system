@@ -90,7 +90,7 @@ Route::group(['middleware' => ['auth', 'admin']], function (){
 
 
     Route::get('/order', [OrderController::class, 'index'])->name('order');
-    Route::get('/edit-order/{id}', [OrderController::class, 'edit']);
+    Route::get('/edit-order/{trackingId}', [OrderController::class, 'edit']);
     Route::put('/update-order/{id}', [OrderController::class, 'update']);
     Route::get('/delivered', [OrderController::class, 'orderDelivered']);
     // Route::get('/delete-order/{id}', [OrderController::class, 'destroy']);
@@ -112,6 +112,9 @@ Route::group(['middleware' => ['auth', 'staff']], function (){
     Route::get('/staff', [StaffController::class, 'index'])->name('staff');
     Route::get('/staffdelivered', [StaffController::class, 'orderDelivered']);
     Route::get('/viewOrders/{id}', [StaffController::class, 'show']);
+
+    Route::get('/edit-order-staff/{trackingId}', [StaffController::class, 'edit']);
+    Route::put('/update-order-staff/{id}', [StaffController::class, 'update']);
 
 });
 

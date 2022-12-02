@@ -47,7 +47,7 @@
                 <tbody>
 
                   @foreach ($orderItems as $order)
-                  <a href="{{url('view-order/'.$order->id)}}">
+                  {{-- <a href="{{url('view-order/'.$order->id)}}"> --}}
                     <tr>
                       {{-- <td>{{$order->id}}</td>
                       <td>{{$order->user_id}}</td> --}}
@@ -67,7 +67,7 @@
                         <a href="{{url('view-order/'.$order->orders->tracking_number)}}" class="btn btn-success btn-sm">View</a>
                       </td>
                     </tr>
-                </a>
+                {{-- </a> --}}
                   @endforeach
 
                 </tbody>

@@ -73,8 +73,9 @@
                           <td>{{$order->orders->status}}</td>
 
                           <td>
-                            <a href="{{url('viewOrders/'.$order->id)}}" class="btn btn-secondary btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                            <a href="{{url('edit-order/'.$order->id)}}" class="btn btn-success btn-sm"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                            {{-- <a href="{{url('view-order/'.$order->orders->tracking_number)}}" class="btn btn-success btn-sm">View</a> --}}
+                            <a href="{{url('viewOrders/'.$order->orders->tracking_number)}}" class="btn btn-secondary btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                            <a href="{{url('edit-order-staff/'.$order->orders->tracking_number)}}" class="btn btn-success btn-sm"><i class="fa fa-edit" aria-hidden="true"></i></a>
                             {{-- <a href="{{url('delete-order/'.$order->id)}}" class="btn btn-danger btn-sm">Delete</a> --}}
                           </td>
                           {{-- <td>
