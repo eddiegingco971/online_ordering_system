@@ -34,6 +34,7 @@
                       <th>Order ID#</th>
                       {{-- <th>User ID#</th> --}}
                       <th>Customer Name</th>
+                      <th>Address</th>
                       <th>Track No</th>
                       {{-- <th>Products</th>
                       <th>Quantity</th> --}}
@@ -54,6 +55,7 @@
                           <td>{{$order->id}}</td>
 
                           <td>{{$order->users->firstname}} {{$order->users->lastname}}</td>
+                          <td>{{$order->users->address}}</td>
                           {{-- <td>{{$order->tracking_number}}</td> --}}
                           <td>{{$order->orders->tracking_number}}</td>
                           {{-- <td>{{$order->products->description}} {{$order->products->product_name}}</td>

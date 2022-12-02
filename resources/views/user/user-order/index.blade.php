@@ -64,7 +64,7 @@
                       <td>{{$order->payment_status}}</td>
                       <td>{{$order->status}}</td> --}}
                       <td>
-                        <a href="{{url('view-order/'.$order->id)}}" class="btn btn-success btn-sm">View</a>
+                        <a href="{{url('view-order/'.$order->orders->tracking_number)}}" class="btn btn-success btn-sm">View</a>
                       </td>
                     </tr>
                 </a>

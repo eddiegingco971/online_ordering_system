@@ -29,21 +29,21 @@ class UserCheckout extends Component
 
     public function placeOrder(){
         $this->validate();
-
+        $tracking_number = 'mac'.Str::random(5);
         foreach ($this->carts as $cart){
             // $this->totalProductAmount += $cart->products->price * $cart->quantity;
-        $order = Order::create([
-            'user_id'=> auth()->user()->id,
-            'product_id'=> $cart->product_id,
-            'tracking_number' => 'mac'.Str::random(5),
-            'order_date' => Carbon::now()->format('m-d-y'),
-            'total_amount' => $this->totalFee,
-            'quantity' => $cart->quantity,
-            'payment_method' => $this->payment_method,
-            'payment_status'=>'unpaid',
-            'status'=> 'new',
-        ]);
-    }
+            $order = Order::create([
+                'user_id'=> auth()->user()->id,
+                'product_id'=> $cart->product_id,
+                'tracking_number' => $tracking_number,
+                'order_date' => Carbon::now()->format('m-d-y'),
+                'total_amount' => $this->totalFee,
+                'quantity' => $cart->quantity,
+                'payment_method' => $this->payment_method,
+                'payment_status'=>'unpaid',
+                'status'=> 'new',
+            ]);
+        }
 
         $orderItem = OrderItems::create([
             'order_id'=> $order->id,

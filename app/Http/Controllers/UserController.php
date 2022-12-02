@@ -138,11 +138,12 @@ class UserController extends Controller
         }
     }
 
-    public function show($id){
+    public function show($tracking_number){
 
         // $orders= Order::where('user_id', auth()->user()->id)->first();
-        $orders = Order::where('tracking_number', '!=' , null)->get();
-        // $orderItems = OrderItems::get();
+        $orders = Order::where('tracking_number', $tracking_number)->where('user_id', auth()->user()->id)->get();
+        // $orderItems = OrderItems::where('order_id', $id)->get();
+        // dd($orderItems);
         return view('user.user-order.viewOrder', compact('orders'));
     }
 }
