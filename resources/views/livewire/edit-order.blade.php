@@ -25,7 +25,7 @@
                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="payment_status" class="col-form-label">Payment Status</label>
+                                    <label for="payment_status" class="col-form-label">Status</label>
                                     <select  type="payment_status" wire:model="status" name="status" class="form-select form-control" id="payment_status" >
                                       @foreach ($statuses as $p)
                                           <option value="{{$p}}" {{$orders->status == $p ? 'selected' : ' '}}>{{$p}}</option>

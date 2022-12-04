@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('total_amount');
             $table->enum('payment_method',['cod','scan_gcash'])->default('cod');
             $table->enum('payment_status',['paid','unpaid'])->default('unpaid');
-            $table->enum('status',['new','process','delivered'])->default('new');
+            $table->enum('status',['new','process','out_for_delivery','delivered'])->default('new');
             // $table->enum('status',['new','process','delivered', 'cancel'])->default('new');
             // $table->bigInteger('customer_id')->unsigned();
             // $table->bigInteger('processed_by');

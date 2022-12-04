@@ -23,6 +23,7 @@ class OrderController extends Controller
         // dd($orders);
         $orderItems = OrderItems::whereHas('orders', function ($q){
             $q->where('payment_status', '!=', 1);
+            // $q->where('status', '!=', 3);
         })->get();
         // dd($orderItems);
         $categories = Category::where('created_at', '!=', null)->get();

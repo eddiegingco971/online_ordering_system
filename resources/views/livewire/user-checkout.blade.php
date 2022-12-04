@@ -168,7 +168,7 @@
                         </div> --}}
                         <div class="col-md-6 mb-3">
                             <label>Phone Number</label>
-                            <input type="number" wire:model.defer="phone_number" id="phone_number" class="form-control" placeholder="09xxxxxxxxx" />
+                            <input type="number" wire:model.defer="phone_number" id="phone_number" class="form-control" placeholder="09xxxxxxxxx" readonly/>
                             @error('phone_number') <small class="text-danger">{{ $message }}</small> @enderror
                         </div>
 
@@ -177,7 +177,7 @@
                         @endphp --}}
                         <div class="col-md-6 mb-3">
                             <label>Address</label>
-                            <textarea wire:model.defer="address" id="address" class="form-control" rows="2"></textarea>
+                            <textarea wire:model.defer="address" id="address" class="form-control" rows="2" readonly></textarea>
                             {{-- <select wire:model.defer="address" id="address" class="form-control form-select">
                                 @foreach ($fees as $fee)
                                     <option value="{{$fee->id}}">{{$fee->barangay_name}}</option>
@@ -282,7 +282,7 @@
                             </span>
                         </button> --}}
 
-                      <button type="button" class="btn btn-success float-right" wire:loading.attr="enabled" wire:click="codOrder"><i class="far fa-credit-card"></i>
+                      <button type="button" class="btn btn-success float-right ml-2" wire:loading.attr="enabled" wire:click="codOrder"><i class="far fa-credit-card"></i>
                         <span wire:loading.remove wire:target="codOrder">
                             (Cash on Delivery)
                         </span>

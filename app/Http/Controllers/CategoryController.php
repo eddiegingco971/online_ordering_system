@@ -43,7 +43,7 @@ class CategoryController extends Controller
 
         $request->validate([
             'category_name' => 'required|string|max:255',
-            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg,webp,jfif|max:2048',
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg,webp,jfif',
             'status' => 'required|string',
         ]);
 

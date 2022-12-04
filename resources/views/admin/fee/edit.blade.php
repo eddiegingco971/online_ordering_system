@@ -85,7 +85,7 @@
 
 
                             <div class="form-group">
-                              <a type="button" class="btn btn-secondary" href="{{url('/sizing')}}">Cancel</a>
+                              <a type="button" class="btn btn-secondary" href="{{url('/fee')}}">Cancel</a>
                               {{-- <button type="submit" class="btn btn-info" style="position: relative; left:78%;">Save</button> --}}
                               <button type="submit" class="btn btn-info">Save</button>
                           </div>

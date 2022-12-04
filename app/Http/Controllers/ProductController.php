@@ -78,7 +78,7 @@ class ProductController extends Controller
         $products->status = $request->input('status');
 
         $request->validate([
-            'product_photo' => 'required|image|mimes:jpg,png,jpeg,gif,svg,jfif,webp|max:2048',
+            'product_photo' => 'required|image|mimes:jpg,png,jpeg,gif,svg,jfif,webp',
             'product_name' => 'required|string|max:255',
             'price' => 'required',
             'description'=>'required|string|max:255',

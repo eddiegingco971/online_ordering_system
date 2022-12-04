@@ -13,7 +13,7 @@ class EditOrderStaff extends Component
         $this->orders = Order::where('tracking_number', $this->trackingId)->first();
         $this->payment_status = $this->orders->payment_status;
         $this->status = $this->orders->status;
-        $this->statuses = ['new', 'process', 'delivered'];
+        $this->statuses = ['new', 'process','out_for_delivery', 'delivered'];
         $this->payment_statuses = ['paid', 'unpaid'];
         // $this->payment_status = $orders->payment_status;
         // $this->status = $orders->status;
