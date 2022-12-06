@@ -6,7 +6,7 @@
         <div class="container card">
             <div class="row">
                 <div class="col-md-7 mt-3 mb-3">
-                    <div class="bg-dark border">
+                    <div class="bg-dark border" id="imgProduct">
                         <img src="{{asset('dist/img/product/'.$this->product_photo)}}" class="w-100" alt="Img">
                     </div>
                 </div>

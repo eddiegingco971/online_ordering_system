@@ -442,6 +442,9 @@
 /* Cart or Wishlist */
 
 /* Product View */
+#imgProduct img{
+    height: 390px;
+}
 .product-view .product-name{
     font-size: 30px;
     font-weight: bold;
