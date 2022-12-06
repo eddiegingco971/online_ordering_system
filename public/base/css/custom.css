@@ -230,7 +230,7 @@
 }
 @media only screen and (max-width: 600px) {
     .main-navbar .bot-navbar .nav-link{
-        font-size: 16px;
+        font-size: 12px;
         padding: 8px 10px;
     }
 }
@@ -443,7 +443,7 @@
 
 /* Product View */
 .product-view .product-name{
-    font-size: 50px;
+    font-size: 30px;
     font-weight: bold;
     color: #2874f0;
 }

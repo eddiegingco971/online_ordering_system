@@ -38,8 +38,8 @@
                   {{-- <th>Order Date</th> --}}
                   {{-- <th>Quantity</th> --}}
                   <th>Total Payment</th>
-                  <th>Payment Method</th>
-                  <th>Payment Status</th>
+                  {{-- <th>Payment Method</th> --}}
+                  {{-- <th>Payment Status</th> --}}
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
@@ -53,8 +53,8 @@
                       <td>{{$order->user_id}}</td> --}}
                       <td>{{$order->orders->tracking_number}}</td>
                       <td>{{$order->orders->total_amount}}</td>
-                      <td>{{$order->orders->payment_method}}</td>
-                      <td>{{$order->orders->payment_status}}</td>
+                      {{-- <td>{{$order->orders->payment_method}}</td> --}}
+                      {{-- <td>{{$order->orders->payment_status}}</td> --}}
                       <td>{{$order->orders->status}}</td>
                       {{-- <td>{{$order->order_date}}</td> --}}
                       {{-- <td>{{$order->quantity}}</td> --}}

@@ -88,14 +88,14 @@
                             </div>
                             <div class="product-card-body">
                                 <h5 class="product-name">
-                                <a href="{{url('select', ['product'=>$product->id])}}">
-                                    {{$product->product_name}}
-                                </a>
+                                    <a href="{{url('select', ['product'=>$product->id])}}">
+                                        {{$product->product_name}}
+                                    </a>
                                 </h5>
                                 <div>
                                     <span class="selling-price">₱{{$product->price}}</span>
                                     {{-- <span class="original-price">₱799</span> --}}
-                                    <span class="text-danger" style="font-weight:bold">{{$product->description}}</span>
+                                    {{-- <span class="text-danger" style="font-weight:bold">{{$product->description}}</span> --}}
                                 </div>
                                 <input type="hidden" name="price" class="form-control" value="{{$product->price}}">
 

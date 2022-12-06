@@ -52,7 +52,9 @@
 
                         <div class="mt-2 mb-2">
                             @if ($this->status == 'active')
-                                <button type="submit" class="btn btn1 btn-success"> <i class="fa fa-shopping-cart"></i> Add To Cart</button>
+                                @if (Auth::user()->user_type == 'user')
+                                    <button type="submit" class="btn btn1 btn-success"> <i class="fa fa-shopping-cart"></i> Add To Cart</button>
+                                @endif
                             @else
                                 <div class="btn bg-danger"> <i class="fa fa-shopping-cart"></i> Unavailable</div>
                             @endif

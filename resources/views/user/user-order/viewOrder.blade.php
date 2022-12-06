@@ -36,7 +36,7 @@
                   <th>User ID#</th> --}}
                   <th>Product Name</th>
                   {{-- <th>Order Date</th> --}}
-                  <th>Quantity</th>
+                  {{-- <th>Quantity</th> --}}
                   <th>Description</th>
                   <th>Payment Method</th>
                   <th>Price</th>
@@ -45,8 +45,8 @@
                 <tbody>
                   @foreach ($orders as $order)
                     <tr>
-                      <td><img src="{{asset('dist/img/product/'.$order->products->product_photo)}}" width="100px" height="100px" alt="Image" style="border-radius: 10%"> {{$order->products->product_name}}</td>
-                      <td>{{$order->quantity}}</td>
+                      <td><img src="{{asset('dist/img/product/'.$order->products->product_photo)}}" width="100px" height="100px" alt="Image" style="border-radius: 10%"> {{$order->products->product_name}} {{$order->quantity}}x</td>
+                      {{-- <td>{{$order->quantity}}</td> --}}
                       <td>{{$order->products->description}}</td>
                       <td>{{$order->payment_method}}</td>
                       <td>{{$order->products->price}}</td>
