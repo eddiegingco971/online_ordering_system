@@ -82,8 +82,8 @@
                       {{-- <th>Order Date</th> --}}
                       <th>Quantity</th>
                       <th>Description</th>
-                      <th>Total Amount</th>
                       <th>Payment Method</th>
+                      <th>Price</th>
                     </tr>
                     </thead>
                     <tbody>

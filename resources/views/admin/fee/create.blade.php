@@ -2,7 +2,7 @@
     <div class="container-fluid">
           <div class="card elevation-3">
             <div class="card-header text-center">
-              <h2>Fee Entry</h2>
+              <h2>Barangay Fee Entry</h2>
             </div>
             <!-- /.card-header -->
             <div class="card-body">

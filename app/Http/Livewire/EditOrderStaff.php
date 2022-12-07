@@ -22,10 +22,16 @@ class EditOrderStaff extends Component
     public function updateOrderStaff(){
         $this->orders = Order::where('tracking_number', $this->trackingId)->get();
         foreach($this->orders as $order){
-            $order->update([
-                'status' => $this->status,
-                'payment_status' => $this->payment_status
-            ]);
+            if($this->status != "delivered"){
+                $order->update([
+                    'status' => $this->status,
+                ]);
+            }else{
+                $order->update([
+                    'payment_status' => 'paid',
+                    'status' => $this->status,
+                ]);
+            }
         }
 
         return redirect('/staff');

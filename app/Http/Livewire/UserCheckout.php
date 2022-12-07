@@ -36,7 +36,7 @@ class UserCheckout extends Component
                 'user_id'=> auth()->user()->id,
                 'product_id'=> $cart->product_id,
                 'tracking_number' => $tracking_number,
-                'order_date' => Carbon::now()->format('m-d-y'),
+                'order_date' => Carbon::now(),
                 'total_amount' => $this->totalFee,
                 'quantity' => $cart->quantity,
                 'payment_method' => $this->payment_method,

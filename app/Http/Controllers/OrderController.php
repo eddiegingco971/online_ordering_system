@@ -32,10 +32,15 @@ class OrderController extends Controller
 
     public function orderDelivered()
     {
-        $orders = Order::where('status', 'delivered')->where('payment_status', 'paid')->get();
-        $orderItems = OrderItems::get();
+        // $orders = Order::where('status', 'delivered')->where('payment_status', 'paid')->get();
+        // $orders = Order::where('status', 'delivered')->where('tracking_number', $tracking_number)->first();
+        $orderItems = OrderItems::whereHas('orders', function ($s){
+            $s->where('status', 'delivered');
+            // $q->where('status', '!=', 3);
+        }
+        )->get();
         $categories = Category::where('created_at', '!=', null)->get();
-        return view('admin.order.delivered', compact('orders', 'categories','orderItems'));
+        return view('admin.order.delivered', compact('categories','orderItems'));
     }
 
     /**

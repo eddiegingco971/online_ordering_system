@@ -21,7 +21,7 @@
     <!-- Brand Logo -->
     <a href="../../index3.html" class="brand-link">
       <img src="{{asset('/dist')}}/img/Logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Products</span>
+      <span class="brand-text font-weight-light">Order Fee</span>
     </a>
 
     <!-- Sidebar -->
@@ -49,7 +49,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6 mt-3">
-                <h1>Fee Management</h1>
+                <h1>Order Fee Management</h1>
             </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -66,7 +66,7 @@
 
             <div class="card elevation-3">
               <div class="card-header">
-                <h3 class="card-title">List of Delivery Fee</h3>
+                <h3 class="card-title">List of Barangay Order Fee</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">

@@ -33,10 +33,15 @@ class StaffController extends Controller
 
     public function orderDelivered()
     {
-        $orders = Order::where('status', 'delivered')->where('payment_status', 'paid')->get();
-        $orderItems = OrderItems::get();
+        // $orders = Order::where('status', 'delivered')->where('payment_status', 'paid')->get();
+        // $orders = Order::where('status', 'delivered')->get();
+        // $orderItems = OrderItems::get();
+        $orderItems = OrderItems::whereHas('orders',function ($s){
+            $s->where('status', 'delivered');
+        }
+        )->get();
         $categories = Category::where('created_at', '!=', null)->get();
-        return view('staff.delivered', compact('orders', 'categories', 'orderItems'));
+        return view('staff.delivered', compact('categories', 'orderItems'));
     }
     public function show($tracking_number){
 

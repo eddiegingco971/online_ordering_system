@@ -16,14 +16,18 @@
                                 @csrf
                                 @method('PUT')
 
-                                <div class="form-group">
-                                  <label for="payment_status" class="col-form-label">Payment Status</label>
-                                  <select  type="payment_status" wire:model="payment_status" name="payment_status" class="form-select form-control" id="payment_status" >
-                                    @foreach ($payment_statuses as $ps)
-                                        <option value="{{$ps}}" {{$orders->payment_status == $ps ? 'selected' : ' '}}>{{$ps}}</option>
-                                    @endforeach
-                                   </select>
-                                </div>
+                                {{-- <div class="form-group">
+                                  <input hidden="true" wire:model="payment_status" name="payment_status" class="form-select form-control" id="payment_status">
+                                </div> --}}
+
+                                {{-- <div class="form-group">
+                                    <label for="payment_status" class="col-form-label">Payment Status</label>
+                                    <select  type="payment_status" wire:model="payment_status" name="payment_status" class="form-select form-control" id="payment_status" >
+                                        @foreach ($payment_statuses as $ps)
+                                            <option value="{{$ps}}" {{$orders->payment_status == $ps ? 'selected' : ' '}}>{{$ps}}</option>
+                                        @endforeach
+                                    </select>
+                                </div> --}}
                                 <div class="form-group">
                                     <label for="payment_status" class="col-form-label">Status</label>
                                     <select  type="payment_status" wire:model="status" name="status" class="form-select form-control" id="payment_status" >

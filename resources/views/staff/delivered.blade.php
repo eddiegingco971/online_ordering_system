@@ -85,23 +85,25 @@
                       <th>Payment Method</th>
                       <th>Payment Status</th>
                       <th>Status</th>
+                      <th>Order Date</th>
                       {{-- <th>Action</th> --}}
                     </tr>
                     </thead>
                     <tbody>
 
-                      @foreach ($orders as $order)
+                      @foreach ($orderItems as $item)
                         <tr>
-                          <td>{{$order->id}}</td>
-                          {{-- <td>{{$order->user_id}}</td> --}}
-                          <td>{{$order->users->firstname}} {{$order->users->lastname}}</td>
-                          <td>{{$order->tracking_number}}</td>
-                           <td>{{$order->products->description}} {{$order->products->product_name}} {{$order->quantity}}x</td>
-                          {{-- <td>{{$order->quantity}}</td> --}}
-                          <td>{{$order->total_amount}}</td>
-                          <td>{{$order->payment_method}}</td>
-                          <td>{{$order->payment_status}}</td>
-                          <td>{{$order->status}}</td>
+                          <td>{{$item->id}}</td>
+                          {{-- <td>{{$item->user_id}}</td> --}}
+                          <td>{{$item->users->firstname}} {{$item->users->lastname}}</td>
+                          <td>{{$item->orders->tracking_number}}</td>
+                          {{-- <td>{{$item->products->description}} </td> --}}
+                          <td>{{$item->products->product_name}} {{$item->orders->quantity}}x</td>
+                          <td>{{$item->orders->total_amount}}</td>
+                          <td>{{$item->orders->payment_method}}</td>
+                          <td>{{$item->orders->payment_status}}</td>
+                          <td>{{$item->orders->status}}</td>
+                          <td>{{$item->orders->order_date}}</td>
                           {{-- <td>
                             <a href="{{url('edit-order/'.$order->id)}}" class="btn btn-success btn-sm">Edit</a>
                           </td> --}}

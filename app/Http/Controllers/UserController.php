@@ -44,6 +44,7 @@ class UserController extends Controller
         $orderItems = OrderItems::where('user_id', auth()->user()->id)->get();
         // $orderItems = OrderItems::get();
 
+
         return view('user.user-order.index', compact('orderItems'));
     }
 

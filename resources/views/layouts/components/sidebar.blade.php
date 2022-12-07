@@ -80,7 +80,7 @@
                 <a href="{{url('/order')}}" class="nav-link">
                   <i class="far fa-calendar nav-icon"></i>
                   @php
-                      $orderItems = DB::table('order_items')->count();
+                      $orderItems = DB::table('orders')->where('status', 'new')->orWhere('status', 'process')->orWhere('status', 'out_for_delivery')->count();
                   @endphp
                   <p>Today's Order</p>
                   <span class="badge badge-danger right">{{$orderItems}}</span>
@@ -91,11 +91,11 @@
                 <a href="{{url('/delivered')}}" class="nav-link">
                   {{-- <i class="far fa-calendar nav-icon"></i> --}}
                   <i class="far fa-check-circle nav-icon" aria-hidden="true"></i>
-                  @php
-                      $orders = DB::table('orders')->where('status', 'delivered')->count();
-                  @endphp
+                  {{-- @php
+                      $orders = DB::table('orders')->where('created_at', 'delivered')->count();
+                  @endphp --}}
                   <p>Delivered</p>
-                  <span class="badge badge-danger right">{{$orders}}</span>
+                  {{-- <span class="badge badge-danger right">{{$orders}}</span> --}}
                 </a>
               </li>
 
@@ -126,7 +126,7 @@
           <li class="nav-item">
             <a href="{{url('/fee')}}" class="nav-link active">
               <i class="nav-icon fa fa-motorcycle" aria-hidden="true"></i>
-              <p>Fee Management</p>
+              <p>Order Fee Management</p>
             </a>
           </li>
 
@@ -199,7 +199,8 @@
 
         {{-- <li class="nav-header">Core Management</li> --}}
         @php
-            $orderItems = DB::table('order_items')->count();
+            // $orderItems = DB::table('order_items')->count();
+            $orderItems = DB::table('orders')->where('status', 'new')->orWhere('status', 'process')->orWhere('status', 'out_for_delivery')->count();
         @endphp
         <li class="nav-item">
           <a href="{{url('/staff')}}" class="nav-link active">

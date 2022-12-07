@@ -22,14 +22,39 @@ class EditOrder extends Component
     public function updateOrder(){
         $this->orders = Order::where('tracking_number', $this->trackingId)->get();
         foreach($this->orders as $order){
-            $order->update([
-                'status' => $this->status,
-                'payment_status' => $this->payment_status
-            ]);
+            if($this->status != "delivered"){
+                $order->update([
+                    'status' => $this->status,
+                ]);
+            }else{
+                $order->update([
+                    'payment_status' => 'paid',
+                    'status' => $this->status,
+                ]);
+            }
         }
 
-        return redirect('/order');
 
+        // foreach($this->orders as $order){
+        //     if($this->payment_status == 'new'){
+        //         $order->update([
+        //             'status' => 'unpaid',
+        //         ]);
+        //     }elseif($this->payment_status == 'process'){
+        //         $order->update([
+        //             'status' => 'unpaid',
+        //         ]);
+        //     }elseif($this->payment_status == 'out_for_delivery'){
+        //         $order->update([
+        //             'status' => 'unpaid',
+        //         ]);
+        //     }else{
+        //         $order->update([
+        //             'status' => 'paid',
+        //         ]);
+        //     }
+        // }
+        return redirect('/order');
     }
 
     // public function loadOrder(){
