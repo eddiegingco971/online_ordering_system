@@ -247,7 +247,8 @@
     text-decoration: none;
 }
 .category-card .category-card-img{
-    height: 100px;
+    height: 145px;
+    /* height: 100px; */
     overflow: hidden;
     border-bottom: 1px solid #ccc;
 }
