@@ -247,8 +247,7 @@
     text-decoration: none;
 }
 .category-card .category-card-img{
-    height: 145px;
-    /* height: 100px; */
+    height: 140px;
     overflow: hidden;
     border-bottom: 1px solid #ccc;
 }
@@ -304,7 +303,7 @@
     overflow: hidden;
 }
 .product-card .product-card-body .product-name{
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 600;
     color: #000;
     white-space: nowrap;
@@ -538,7 +537,7 @@
     overflow: hidden;
 }
 .product-card .product-card-body .product-name{
-    font-size: 20px;
+    /* font-size: 20px; */
     font-weight: 600;
     color: #000;
     white-space: nowrap;

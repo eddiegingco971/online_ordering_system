@@ -12,8 +12,9 @@
 
     <div class="row featurette mt-4">
     <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">Welcome to our Mac Kaon Foodhub <span class="text-muted">It’ll blow your mind.</span></h2>
-        <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, nisi inventore doloribus quia vero aspernatur nam neque reprehenderit sint consequatur dolorum? At dicta eligendi itaque, enim maxime reprehenderit eaque aut!</p>
+        {{-- <h2 class="featurette-heading fw-normal lh-1">Welcome to our Mac Kaon Foodhub <span class="text-muted">It’ll blow your mind.</span></h2> --}}
+        <h2 class="featurette-heading fw-normal lh-1">Mac Kaon Foodhub</h2>
+        <p class="lead">Mac Kaon FoodHub is owned by Mr. Mark James Lofranco Estose, which is located at Poblacion, Danao, Bohol</p>
     </div>
     <div class="col-md-5">
         <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="{{asset('/dist/img/mackaon.jpg')}}" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false" style="height: 300px;width:900px"/>

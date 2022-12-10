@@ -38,12 +38,12 @@
                 </div>
                 <div class="mb-2">
                     <a href="" class="text-white">
-                        <i class="fa fa-phone"></i> +63 9127891836
+                        <i class="fa fa-phone"></i> +63 9xxxxxxxxx
                     </a>
                 </div>
                 <div class="mb-2">
                     <a href="" class="text-white">
-                        <i class="fa fa-envelope"></i> mackaon@gmail.com
+                        <i class="fa fa-envelope"></i> sample@gmail.com
                     </a>
                 </div>
             </div>

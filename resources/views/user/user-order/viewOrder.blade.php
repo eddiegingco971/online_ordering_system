@@ -45,7 +45,9 @@
                 <tbody>
                   @foreach ($orders as $order)
                     <tr>
-                      <td><img src="{{asset('dist/img/product/'.$order->products->product_photo)}}" width="100px" height="100px" alt="Image" style="border-radius: 10%"> {{$order->products->product_name}} {{$order->quantity}}x</td>
+                      <td><img src="{{asset('dist/img/product/'.$order->products->product_photo)}}" width="50px" height="50px" alt="Image" style="border-radius: 10%">
+                        <h6>{{$order->products->product_name}} {{$order->quantity}}x</h6>
+                    </td>
                       {{-- <td>{{$order->quantity}}</td> --}}
                       <td>{{$order->products->description}}</td>
                       <td>{{$order->payment_method}}</td>
